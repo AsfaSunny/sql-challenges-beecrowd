@@ -384,10 +384,8 @@ FROM customers
 SELECT REGEXP_REPLACE(natural_person.cpf, 
 					  '(.{3})(.{3})(.{3})(.{2})', -- Divides the string in four parts (3-3-3-2 any digits)
 					  '\1.\2.\3-\4') AS cpf -- inserts the "." and "-" between each part
-FROM natural_person
-INNER JOIN customers
-    ON natural_person.id_customers = customers.id
-;
+FROM natural_person;
+
 
 -- Alternative 2. Using SUBSTR
 	   
